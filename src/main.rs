@@ -27,7 +27,7 @@ fn analyse_number(number: i32) -> (bool, bool, bool, bool) {
     if number % 2 == 0 {
         result.1 = true;
     } else {
-        result.0 = false;
+        result.0 = true;
     }
 
     // Is number less than 10
@@ -60,4 +60,23 @@ fn main() {
     // Is the entered a number: odd, even, less than 10, higher than 25
     let analyse_result: (bool, bool, bool, bool) = analyse_number(number);
     print_number_analysis_result(number, analyse_result);
+
+    println!("\n2. 'while' loop's demo");
+    println!("-----------------------\n");
+
+    let mut index = 0;
+    while index < number {
+        println!("{} is less than {}", index, number);        
+        index = index+1;
+    }
+
+    println!("\n3. 'for' loop's demo");
+    println!("-----------------------\n");
+
+    let mut array_nums = [20, 30, 40, 50, 60];
+    println!("Given, an array of numbers as follow: {:?}", array_nums);
+    for i in {0..array_nums.len()} {
+        array_nums[i] = array_nums[i] * number;
+    }
+    println!("When multiplied by the number you've entered, they are shown as follow: {:?} \n", array_nums);
 }
